@@ -26,9 +26,8 @@ total_estimate= " "
         material_cost= square_feet*25
         labor_cost= square_feet*15
         total_estimate= material_cost+ labor_cost
-        return redirect(url_for('estimate'))
+        return render_template('estimate.html', pageTitle='Make Estimate', estimate=total_estimate)
     return render_template('estimate.html', pageTitle='Make Estimate')
-
 
    
 
