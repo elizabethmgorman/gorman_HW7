@@ -17,10 +17,9 @@ def about():
 
 @app.route('/estimate', methods=['GET', 'POST'])
 def estimate():
-total_estimate= " "
     if request.method=="POST":
-        radius= request.form['tank_radius']
-        height= request.form['tank_height']
+        radius= float(request.form['tank_radius'])
+        height= float(request.form['tank_height'])
         area_tank_top= pi* radius**2
         area_sides=2*(pi*(radius*height))
         total_area= area_tank_top + area_sides
