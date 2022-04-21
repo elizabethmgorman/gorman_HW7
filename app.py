@@ -1,9 +1,11 @@
-from cmath import pi
+
 from flask import Flask, redirect
 from flask import render_template, redirect, request, url_for
 from flask import request
 
 app = Flask(__name__)
+
+pi=3.14
 
 @app.route('/')
 def index():
@@ -17,10 +19,10 @@ def about():
 def estimate():
 total_estimate= " "
     if request.method=="POST":
-        radius= request.form['tank_weight']
+        radius= request.form['tank_radius']
         height= request.form['tank_height']
-        area_tank_top= pi* radius^2
-        area_sides=2*(pi(radius*height))
+        area_tank_top= pi* radius**2
+        area_sides=2*(pi*(radius*height))
         total_area= area_tank_top + area_sides
         square_feet= total_area/144
         material_cost= square_feet*25
