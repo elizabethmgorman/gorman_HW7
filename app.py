@@ -13,7 +13,7 @@ def index():
 def about():
     return render_template('about.html', pageTitle='About Vertical Tank Maintenance')
 
-@app.route('/estimate', methods=['GET''POST'])
+@app.route('/estimate', methods=['GET', 'POST'])
 def estimate():
 total_estimate= " "
     if request.method=="POST":
